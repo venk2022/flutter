@@ -1,6 +1,9 @@
+// ignore_for_file: prefer_const_constructors, unnecessary_import
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/home_page.dart';
+import 'package:flutter_application_1/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_application_1/pages/login_page.dart';
 
@@ -23,14 +26,15 @@ class MyApp extends StatelessWidget {
         primarySwatch : Colors.deepPurple,
         fontFamily: GoogleFonts.lato().fontFamily,
       ), 
+      debugShowCheckedModeBanner: false,
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
       initialRoute: "/",
       routes: {
         "/": (context)=> LoginPage(), //sirf ek hi homePage rhega
-        "/home": (context)=> HomePage(),
-        "/login": (context)=> const LoginPage()
+        MyRoutes.homeRoute: (context)=> HomePage(),
+        MyRoutes.loginRoute: (context)=> const LoginPage()
       },
     );
 

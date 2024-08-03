@@ -1,6 +1,7 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/utils/routes.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -18,7 +19,7 @@ class LoginPage extends StatelessWidget {
             height: 20.0,
           ),
            Text("Welcome",style: TextStyle(
-            fontSize: 22,
+            fontSize: 28,
             fontWeight: FontWeight.bold,
           ),
           ),
@@ -42,13 +43,17 @@ class LoginPage extends StatelessWidget {
             ),
           ),
            SizedBox(
-            height: 20.0,
+            height: 40.0,
           ),
           ElevatedButton(
-            child: Text("Login"),
-            style: TextButton.styleFrom(),
+            child: Text("Login",style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+            ),
+            ),
+            style: TextButton.styleFrom(minimumSize: Size(150,40),backgroundColor: Colors.amberAccent,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0))),
             onPressed: () {
-              print("Hello Venktesh");
+              Navigator.pushNamed(context, MyRoutes.homeRoute);
             },
           )
 
