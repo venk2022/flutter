@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/home_page.dart';
 import 'package:flutter_application_1/utils/routes.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_application_1/widgets/themes.dart';
 import 'package:flutter_application_1/pages/login_page.dart';
 
 void main(){
@@ -22,10 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // home:HomePage(),
       themeMode: ThemeMode.light,
-      theme: ThemeData(
-        primarySwatch : Colors.deepPurple,
-        fontFamily: GoogleFonts.lato().fontFamily,
-      ), 
+      theme: MyTheme.themeData,
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData(
         brightness: Brightness.dark,

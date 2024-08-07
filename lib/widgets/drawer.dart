@@ -1,7 +1,5 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_const_declarations
 
-import 'dart:ffi';
-import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +11,7 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     final imageurl = "https://documents.iplt20.com/ipl/IPLHeadshot2024/2.png";
     return Drawer(
+      elevation: 0.0,
       child: Container(
         color: Colors.black,
         child: ListView(
@@ -74,7 +73,6 @@ class MyDrawer extends StatelessWidget {
           ],
         ),
       ),
-
     );
   }
 }
