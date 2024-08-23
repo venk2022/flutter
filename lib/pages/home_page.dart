@@ -47,13 +47,41 @@ class _HomePageState extends State<HomePage> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: (Hackathon.items!=null && Hackathon.items.isNotEmpty)?
-        ListView.builder(
-          itemCount: Hackathon.items.length,
-          itemBuilder: (context, index)=>
-            ItemWidget(
-              item: Hackathon.items[index],
-            ),
-        ):Center(
+        GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 30,
+                crossAxisSpacing: 15),
+            itemBuilder: (context,index){
+              final item = Hackathon.items[index];
+              return Card (
+                  clipBehavior: Clip.antiAlias,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)
+                  ),
+                  child: GridTile(
+                      header: Container(
+                          child: Text(item.name,
+                          style: TextStyle(color: Colors.white),),
+                          padding:const EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: Colors.purple
+                          ),
+                      ),
+                      child: Image.network(item.image),
+                      footer: Container(
+                        child: Text(item.price.toString(),
+                          style: TextStyle(color: Colors.white),),
+                        padding:const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                            color: Colors.black
+                        ),
+                      ),
+                  ));
+            },
+            itemCount: Hackathon.items.length,
+        )
+            :Center(
           child: CircularProgressIndicator(
             color: Colors.black,
           ),
