@@ -27,28 +27,36 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async{
+    await Future.delayed(Duration(seconds: 2));
     final datajson =  await rootBundle.loadString("assets/files/data.json");
     final decodedata = jsonDecode(datajson);
     var productdata = decodedata["products"];
-    print(productdata);
+    Hackathon.items = List.from(productdata)
+        .map<Item>((item) => Item.fromMap(item))
+        .toList();
+    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
-    final dummyList = List.generate(15, (index) => Hackathon.items[0]);
     return Scaffold(
       appBar: AppBar(
-        title: Text("Hackathon app"),
+        title: Text("Hackathon App",
+        style: TextStyle(fontWeight: FontWeight.bold),),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: ListView.builder(
-          itemCount: dummyList.length,
-          itemBuilder: (context, index) {
-            return ItemWidget(
-              item: dummyList[index],
-            );
-          },
+        child: (Hackathon.items!=null && Hackathon.items.isNotEmpty)?
+        ListView.builder(
+          itemCount: Hackathon.items.length,
+          itemBuilder: (context, index)=>
+            ItemWidget(
+              item: Hackathon.items[index],
+            ),
+        ):Center(
+          child: CircularProgressIndicator(
+            color: Colors.black,
+          ),
         ),
       ),
       drawer: MyDrawer(),
