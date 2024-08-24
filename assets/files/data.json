@@ -3,42 +3,42 @@
         {
             "id": 1,
             "name": "Laptop A",
-            "description": "A high-performance laptop suitable for gaming and professional work.",
+            "desc": "A high-performance laptop suitable for gaming and professional work.",
             "price": 1200.99,
             "color": "Black",
-            "image": "https://cdn.thewirecutter.com/wp-content/media/2023/11/editing-laptop-2048px-231551-2x1-1.jpg?auto=webp&quality=75&crop=1.91:1&width=1200"
+            "image": "https://image.similarpng.com/very-thumbnail/2021/08/Laptop-device-mock-up-on-transparent-background-PNG.png"
         },
         {
             "id": 2,
             "name": "Laptop B",
-            "description": "A lightweight and portable laptop perfect for everyday use.",
+            "desc": "A lightweight and portable laptop perfect for everyday use.",
             "price": 899.99,
             "color": "Silver",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStgWGcXEMJmpIJ3dvXRSwrj4DIqPuKpA1K2A&s"
+            "image": "https://static.vecteezy.com/system/resources/thumbnails/025/366/622/small/laptop-with-blank-screen-isolate-on-transparent-background-ai-generated-png.png"
         },
         {
             "id": 3,
             "name": "Laptop C",
-            "description": "A budget-friendly laptop with all the essential features for students.",
+            "desc": "A budget-friendly laptop with all the essential features for students.",
             "price": 499.99,
             "color": "Blue",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqcRuvJXWnjQgcXrlYGQ5oNqvF6bOVumrSqA&s"
+            "image": "https://img.freepik.com/premium-psd/laptop-blank-screen-png-isolated-transparent-background_1089142-32511.jpg"
         },
         {
             "id": 4,
             "name": "Laptop D",
-            "description": "A powerful laptop with a large display, ideal for multimedia consumption.",
+            "desc": "A powerful laptop with a large display, ideal for multimedia consumption.",
             "price": 1399.99,
             "color": "Grey",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR_PjR7mAKttaP94i5D9DHM5ONOYCONy_WLA&s"
+            "image": "https://image.similarpng.com/very-thumbnail/2020/06/Laptop-computer-with-apps-icons-interface-on-transparent-background-PNG.png"
         },
         {
             "id": 5,
             "name": "Laptop E",
-            "description": "A sleek and stylish laptop with a touch screen, perfect for creative professionals.",
+            "desc": "A sleek and stylish laptop with a touch screen, perfect for creative professionals.",
             "price": 1599.99,
             "color": "White",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2zZ-znXJQquFrWu1r4WpmvNgg4z_-igTZlw&s"
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGbsvxo8DXFMZ2WwWrsUVyQqeKGBzcGDkVXg&s"
         }
     ]
 }
