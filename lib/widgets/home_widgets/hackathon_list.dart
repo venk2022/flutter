@@ -64,7 +64,7 @@ class HackathonItem extends StatelessWidget {
                             style:ElevatedButton.styleFrom(
                               backgroundColor: MyTheme.darkbluish,
                             ),
-                            child: "Buy".text.color(Colors.white).bold.make())
+                            child: "Add".text.color(Colors.white).make())
                       ],
                     )
                   ],
