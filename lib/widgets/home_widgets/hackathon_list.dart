@@ -54,15 +54,15 @@ class HackathonItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    hackathon.name.text.lg.color(MyTheme.darkbluish).bold.make(),
-                    hackathon.desc.text.textStyle(context.captionStyle).make(),
+                    hackathon.name.text.lg.color(context.theme.colorScheme.secondary).bold.make(),
+                    hackathon.desc.text.color(Colors.indigo).textStyle(context.captionStyle).bold.make(),
                     ButtonBar(
                       alignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        "\$${hackathon.price}".text.color(Colors.black).bold.make(),
+                        "\$${hackathon.price}".text.color(Colors.white).bold.make(),
                         ElevatedButton(onPressed: (){},
                             style:ElevatedButton.styleFrom(
-                              backgroundColor: MyTheme.darkbluish,
+                              backgroundColor: context.theme.colorScheme.primary,
                             ),
                             child: "Add".text.color(Colors.white).make())
                       ],
@@ -72,6 +72,6 @@ class HackathonItem extends StatelessWidget {
             )
           ],
         )
-    ).white.roundedLg.square(150).make().py16();
+    ).color(context.cardColor).roundedLg.square(150).make().py16();
   }
 }
