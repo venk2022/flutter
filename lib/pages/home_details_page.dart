@@ -18,18 +18,19 @@ class HomeDetailsPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: MyTheme.creamcolor,
+        backgroundColor: Colors.transparent,
       ),
-      backgroundColor:  MyTheme.creamcolor,
+      backgroundColor:  context.theme.canvasColor,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.theme.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
+          buttonPadding: EdgeInsets.zero,
           children: [
             "\$${hackathon.price}".text.xl4.red800.bold.make(),
             ElevatedButton(onPressed: (){},
                 style:ElevatedButton.styleFrom(
-                  backgroundColor: MyTheme.darkbluish,
+                  backgroundColor: Colors.deepPurple,
                 ),
                 child: "Add".text.xl2.color(Colors.white).bold.make(),
             ).wh(100, 50)
@@ -44,14 +45,18 @@ class HomeDetailsPage extends StatelessWidget {
                 tag: Key(hackathon.id.toString()),
                 child: Image.network(hackathon.image),
             ).h32(context),
-            Expanded(child: VxArc(
-              height: 0,
+            Expanded(
+                child: VxArc(
+              height: 30.0,
+              arcType: VxArcType.convey,
+              edge: VxEdge.top,
               child: Container(
-                color: Colors.white,
+                color: context.cardColor,
+                width: context.screenWidth,
                 child: Column(
                   children: [
-                    hackathon.name.text.xl4.color(MyTheme.darkbluish).bold.make(),
-                    hackathon.desc.text.center.color(Colors.blue).lg.textStyle(context.captionStyle).bold.make(),
+                    hackathon.name.text.xl4.color(context.accentColor).bold.make(),
+                    hackathon.desc.text.center.color(MyTheme.lightbluish).lg.textStyle(context.captionStyle).bold.make(),
                     //dummy text
                     dummyText.text.center.color(Colors.grey).lg.bold.make().p16(),
                   ],

@@ -10,8 +10,8 @@ class Hackathonheader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children : [
-        "Hackathon App".text.xl5.bold.color(MyTheme.darkbluish).make(),
-        "Trending Laptops".text.xl3.bold.make(),
+        "Hackathon App".text.xl5.bold.color(Theme.of(context).colorScheme.secondary).make(),
+        "Trending Laptops".text.color(MyTheme.creamcolor).xl3.bold.make(),
 
       ],
     );

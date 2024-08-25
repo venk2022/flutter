@@ -9,6 +9,7 @@ import 'package:flutter_application_1/widgets/themes.dart';
 import 'package:flutter_application_1/pages/login_page.dart';
 
 
+
 void main(){
   runApp(MyApp());
 }
@@ -23,13 +24,11 @@ class MyApp extends StatelessWidget {
     
      return MaterialApp(
       // home:HomePage(),
-      themeMode: ThemeMode.light,
-      theme: MyTheme.themeData,
+      themeMode: ThemeMode.system,
+      theme: MyTheme.lightTheme,
+      darkTheme: MyTheme.darkTheme,
       debugShowCheckedModeBanner: false,
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-      ),
-      initialRoute: MyRoutes.homeRoute,
+      initialRoute: MyRoutes.loginRoute,
       routes: {
         "/": (context)=> LoginPage(), //sirf ek hi homePage rhega
         MyRoutes.homeRoute: (context)=> HomePage(),
