@@ -2,10 +2,12 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/cart_page.dart';
 import 'package:flutter_application_1/pages/home_page.dart';
 import 'package:flutter_application_1/utils/routes.dart';
 import 'package:flutter_application_1/widgets/themes.dart';
 import 'package:flutter_application_1/pages/login_page.dart';
+
 
 void main(){
   runApp(MyApp());
@@ -31,7 +33,8 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (context)=> LoginPage(), //sirf ek hi homePage rhega
         MyRoutes.homeRoute: (context)=> HomePage(),
-        MyRoutes.loginRoute: (context)=> const LoginPage()
+        MyRoutes.loginRoute: (context)=> const LoginPage(),
+        MyRoutes.cartRoute: (context)=> CartPage()
       },
     );
 
