@@ -63,7 +63,9 @@ class _HomePageState extends State<HomePage> {
               if(Hackathon.items != null && Hackathon.items.isNotEmpty)
                 Hackathonlist().py16().expand()
               else
-                CircularProgressIndicator().centered().expand(),
+                CircularProgressIndicator(
+                  color: Colors.blue,
+                ).centered().expand(),
         ],
       ),
     ),
