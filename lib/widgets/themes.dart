@@ -7,7 +7,7 @@ class MyTheme{
         primarySwatch : Colors.deepPurple,
         fontFamily: GoogleFonts.poppins().fontFamily,
         cardColor: Colors.white,
-        canvasColor: MyTheme.creamcolor,
+        canvasColor: creamcolor,
         colorScheme: ColorScheme.dark().copyWith(
           primary: MyTheme.darkbluish,
           secondary: darkbluish,
@@ -32,9 +32,9 @@ class MyTheme{
     brightness: Brightness.dark,
     fontFamily: GoogleFonts.poppins().fontFamily,
     cardColor: Colors.black,
-    canvasColor: MyTheme.darkcolor,
+    canvasColor: darkcolor,
     colorScheme: ColorScheme.dark().copyWith(
-      primary: MyTheme.darkcolor,
+      primary: lightbluish,
       secondary: Colors.white,
     ),
     appBarTheme: AppBarTheme(

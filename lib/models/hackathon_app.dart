@@ -2,6 +2,16 @@
 
 class Hackathon {
   static List<Item> items = [];
+
+
+  // Get item by ID
+
+  static Item getbyId(int id)=> items.firstWhere((element)=>element.id==id, orElse: null);
+
+
+  // Get item by position
+
+  static Item getbyposition(int pos)=> items[pos];
 }
 
 class Item {

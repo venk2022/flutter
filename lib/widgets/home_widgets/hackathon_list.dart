@@ -11,9 +11,10 @@ class Hackathonlist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      shrinkWrap: true,
       itemCount: Hackathon.items.length,
       itemBuilder: (context,index){
-        final hackathon = Hackathon.items[index];
+        final hackathon = Hackathon.getbyposition(index);
         return InkWell(
             onTap: ()=> Navigator.push(
               context,
@@ -59,7 +60,7 @@ class HackathonItem extends StatelessWidget {
                     ButtonBar(
                       alignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        "\$${hackathon.price}".text.color(Colors.white).bold.make(),
+                        "\$${hackathon.price}".text.color(Colors.cyan).bold.make(),
                         ElevatedButton(onPressed: (){},
                             style:ElevatedButton.styleFrom(
                               backgroundColor: context.theme.colorScheme.primary,
