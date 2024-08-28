@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/models/cart.dart';
 import 'package:flutter_application_1/models/hackathon_app.dart';
 import 'package:flutter_application_1/pages/home_details_page.dart';
 import 'package:flutter_application_1/widgets/themes.dart';
@@ -61,11 +62,7 @@ class HackathonItem extends StatelessWidget {
                       alignment: MainAxisAlignment.spaceBetween,
                       children: [
                         "\$${hackathon.price}".text.color(Colors.cyan).bold.make(),
-                        ElevatedButton(onPressed: (){},
-                            style:ElevatedButton.styleFrom(
-                              backgroundColor: context.theme.colorScheme.primary,
-                            ),
-                            child: "Add".text.color(Colors.white).make())
+                        _AddToCart(hackathon:hackathon)
                       ],
                     )
                   ],
@@ -74,5 +71,41 @@ class HackathonItem extends StatelessWidget {
           ],
         )
     ).color(context.cardColor).roundedLg.square(150).make().py16();
+  }
+}
+
+class _AddToCart extends StatefulWidget {
+  final Item hackathon;
+  const _AddToCart({
+    super.key,
+    required this.hackathon
+  });
+
+  @override
+  State<_AddToCart> createState() => _AddToCartState();
+}
+
+class _AddToCartState extends State<_AddToCart> {
+
+  bool isAdded = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(onPressed: (){
+      isAdded = isAdded.toggle();
+      final _hackathon = Hackathon();
+      final _cart = Cartmodel();
+      _cart.hackathon = _hackathon;
+      _cart.add(widget.hackathon);
+      setState(() {
+
+      });
+    },
+        style:ElevatedButton.styleFrom(
+          backgroundColor: context.theme.colorScheme.primary,
+        ),
+        child: isAdded ? Icon(Icons.done,
+        color: context.theme.canvasColor,)
+            : "Add".text.color(Colors.white).make());
   }
 }
