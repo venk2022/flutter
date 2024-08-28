@@ -6,16 +6,16 @@ class Hackathon {
 
   // Get item by ID
 
-  static Item getbyId(int id)=> items.firstWhere((element)=>element.id==id, orElse: null);
+  Item getbyId(int id)=> items.firstWhere((element)=>element.id==id, orElse: null);
 
 
   // Get item by position
 
-  static Item getbyposition(int pos)=> items[pos];
+  Item getbyposition(int pos)=> items[pos];
 }
 
 class Item {
-  final num id;
+  final int id;
   final String name;
   final String desc;  // Renamed for clarity
   final num price;
@@ -66,7 +66,7 @@ class Item {
   }
 
   Item copyWith({
-    num? id,
+    int? id,
     String? name,
     String? desc,
     num? price,
@@ -96,7 +96,7 @@ class Item {
 
   factory Item.fromMap(Map<String, dynamic> map) {
     return Item(
-      id: map['id'] as num,
+      id: map['id'] as int,
       name: map['name'] as String,
       desc: map['desc'] as String,
       price: map['price'] as num,

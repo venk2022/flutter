@@ -14,7 +14,7 @@ class Hackathonlist extends StatelessWidget {
       shrinkWrap: true,
       itemCount: Hackathon.items.length,
       itemBuilder: (context,index){
-        final hackathon = Hackathon.getbyposition(index);
+        final hackathon = Hackathon.items[index];
         return InkWell(
             onTap: ()=> Navigator.push(
               context,
