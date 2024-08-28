@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/models/cart.dart';
 import 'package:flutter_application_1/pages/home_details_page.dart';
 import 'package:flutter_application_1/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -33,12 +34,17 @@ class _cartTotal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _cart = Cartmodel();
     return SizedBox(
       height: 200,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          "\$9999".text.xl5.color(context.theme.colorScheme.secondary).make(),
+          Expanded(
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: "\$${_cart.totalprice}".text.xl5.color(context.theme.colorScheme.secondary).make(),
+              ), ),
           30.widthBox,
           ElevatedButton(onPressed: (){
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -69,10 +75,11 @@ class _CartList extends StatefulWidget {
 }
 
 class _CartListState extends State<_CartList> {
+  final _cart = Cartmodel();
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 5,
+      itemCount: _cart.items?.length?? 0 ,
       itemBuilder: (context,index)=> ListTile(
         leading: Icon(Icons.done,
         color: context.theme.colorScheme.primary,),
@@ -80,7 +87,7 @@ class _CartListState extends State<_CartList> {
           icon: Icon(Icons.remove_circle_outline,
               color: context.theme.colorScheme.primary),
         ),
-          title: "Item 1".text.color(context.theme.colorScheme.primary).make(),
+          title: _cart.items[index].name.text.color(context.theme.colorScheme.primary).make(),
       ),
     );
   }
