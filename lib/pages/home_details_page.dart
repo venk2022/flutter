@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/hackathon_app.dart';
+import 'package:flutter_application_1/widgets/home_widgets/add_to_cart.dart';
 import 'package:flutter_application_1/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
@@ -28,12 +29,7 @@ class HomeDetailsPage extends StatelessWidget {
           buttonPadding: EdgeInsets.zero,
           children: [
             "\$${hackathon.price}".text.xl4.red800.bold.make(),
-            ElevatedButton(onPressed: (){},
-                style:ElevatedButton.styleFrom(
-                  backgroundColor: Colors.deepPurple,
-                ),
-                child: "Add".text.xl2.color(Colors.white).bold.make(),
-            ).wh(100, 50)
+            AddToCart(hackathon: hackathon).wh(100, 50)
           ],
         ).p32(),
       ),
