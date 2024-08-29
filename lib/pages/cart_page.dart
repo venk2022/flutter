@@ -78,12 +78,17 @@ class _CartListState extends State<_CartList> {
   final _cart = Cartmodel();
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return _cart.items.isEmpty?
+    "Empty Cart".text.xl3.color(context.theme.colorScheme.primary).makeCentered()
+        :ListView.builder(
       itemCount: _cart.items?.length?? 0 ,
       itemBuilder: (context,index)=> ListTile(
         leading: Icon(Icons.done,
         color: context.theme.colorScheme.primary,),
-        trailing: IconButton(onPressed: (){},
+        trailing: IconButton(onPressed: (){
+          _cart.remove(_cart.items[index]);
+          setState(() {});
+        },
           icon: Icon(Icons.remove_circle_outline,
               color: context.theme.colorScheme.primary),
         ),
