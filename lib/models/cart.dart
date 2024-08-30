@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/core/store.dart';
 import 'package:flutter_application_1/models/hackathon_app.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class Cartmodel{
   //hackathon fields
@@ -22,13 +24,21 @@ class Cartmodel{
   //Get total price
   num get totalprice => items.fold(0, (total,current)=> total + current.price);
 
-  //Add item
-  void add(Item item){
-    _itemIds.add(item.id);
-  }
 
   //Remove item
   void remove(Item item){
     _itemIds.remove(item.id);
   }
+}
+
+class AddMutation extends VxMutation<Mystore>{
+  final Item item;
+
+  AddMutation(this.item);
+
+  @override
+  perform() {
+    store!.cart._itemIds.add(item.id);
+  }
+
 }

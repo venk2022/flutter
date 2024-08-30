@@ -6,11 +6,8 @@ import 'package:flutter/services.dart';
 import 'dart:convert';
 import 'package:flutter_application_1/models/hackathon_app.dart';
 import 'package:flutter_application_1/utils/routes.dart';
-import 'package:flutter_application_1/widgets/drawer.dart';
 import 'package:flutter_application_1/widgets/home_widgets/hackathon_header.dart';
 import 'package:flutter_application_1/widgets/home_widgets/hackathon_list.dart';
-import 'package:flutter_application_1/widgets/item_widget.dart';
-import 'package:flutter_application_1/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 
