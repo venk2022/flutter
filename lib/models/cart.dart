@@ -2,14 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/hackathon_app.dart';
 
 class Cartmodel{
-
-  static final cartmodel = Cartmodel._internal();
-
-  Cartmodel._internal();
-
-  factory Cartmodel() => cartmodel;
-
-
   //hackathon fields
   late Hackathon _hackathon;
 
