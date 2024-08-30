@@ -1,14 +1,6 @@
 // ignore_for_file: file_names
 
 class Hackathon {
-
-  static final hack = Hackathon._internal();
-
-  Hackathon._internal();
-
-  factory Hackathon() => hack;
-
-
   static List<Item> items = [];
 
 
