@@ -42,7 +42,12 @@ class _cartTotal extends StatelessWidget {
           Expanded(
               child: FittedBox(
                 fit: BoxFit.scaleDown,
-                child: "\$${_cart.totalprice}".text.xl5.color(context.theme.colorScheme.secondary).make(),
+                child: VxBuilder(
+                  builder: (context,_,__){
+                  return "\$${_cart.totalprice}".text.xl5.color(context.theme.colorScheme.secondary).make();
+                },
+                  mutations: {RemoveMutation},
+                ),
               ), ),
           30.widthBox,
           ElevatedButton(onPressed: (){
@@ -69,23 +74,30 @@ class _cartTotal extends StatelessWidget {
 class _CartList extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    final Cartmodel _cart = (VxState.store as Mystore).cart;
-    return _cart.items.isEmpty?
-    "Empty Cart".text.xl3.color(context.theme.colorScheme.primary).makeCentered()
-        :ListView.builder(
-      itemCount: _cart.items?.length?? 0 ,
-      itemBuilder: (context,index)=> ListTile(
-        leading: Icon(Icons.done,
-        color: context.theme.colorScheme.primary,),
-        trailing: IconButton(onPressed: (){
-          _cart.remove(_cart.items[index]);
-          //setState(() {});
-        },
-          icon: Icon(Icons.remove_circle_outline,
-              color: context.theme.colorScheme.primary),
-        ),
-          title: _cart.items[index].name.text.color(context.theme.colorScheme.primary).make(),
-      ),
+    return VxBuilder(
+        mutations: {RemoveMutation},
+        builder: (context, _, __)
+    {
+      final Cartmodel _cart = (VxState.store as Mystore).cart;
+      return _cart.items.isEmpty ?
+      "Empty Cart".text.xl3.color(context.theme.colorScheme.primary)
+          .makeCentered()
+          : ListView.builder(
+        itemCount: _cart.items?.length ?? 0,
+        itemBuilder: (context, index) =>
+            ListTile(
+              leading: Icon(Icons.done,
+                color: context.theme.colorScheme.primary,),
+              trailing: IconButton(
+                onPressed: () => RemoveMutation(_cart.items[index]),
+                icon: Icon(Icons.remove_circle_outline,
+                    color: context.theme.colorScheme.primary),
+              ),
+              title: _cart.items[index].name.text.color(
+                  context.theme.colorScheme.primary).make(),
+            ),
+      );
+    },
     );
   }
 }
